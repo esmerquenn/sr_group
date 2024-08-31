@@ -1,0 +1,128 @@
+[x-cloak] {
+  display: none !important;
+}
+
+.logo_img {
+  width: 206px;
+}
+.logo_img_footer {
+  width: 100px !important;
+}
+.hidden_dropdown {
+  position: absolute;
+  background: white;
+  right: 0;
+  width: 100%;
+  top: 12.7vh;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-out;
+}
+.dropdown {
+  opacity: 1;
+  visibility: visible;
+  z-index: 99999999;
+  max-height: 210px;
+  transition: all 0.5s ease-in;
+}
+.drop_div,
+.drop_div_services {
+  transition: 0.5s ease-out;
+}
+.drop_active {
+  padding-block: 4px;
+  max-height: 500px;
+  transition: 0.5s ease-in;
+}
+@layer base {
+  .dark .bg-red-100 {
+    background-color: #1a202c;
+  }
+
+  .dark .text-black {
+    color: #e2e8f0;
+  }
+
+  .dark .bg-yellow-300 {
+    background-color: #7e7230;
+  }
+}
+.font-asap {
+  font-family: "Asap" !important;
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 65px;
+  aspect-ratio: 1;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset rgb(2,1,142);
+  animation: l4 2.5s infinite;
+}
+.loader:after {
+  animation-delay: -1.25s;
+}
+.logo_letter{
+  letter-spacing: 1.1px;
+  padding-left: 2px;
+}
+@keyframes l4 {
+  0% {
+    inset: 0 35px 35px 0;
+  }
+  12.5% {
+    inset: 0 35px 0 0;
+  }
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
+  }
+  50% {
+    inset: 35px 0 0 35px;
+  }
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .hidden_dropdown {
+    display: flex;
+    align-items: center;
+    position: static;
+    background: initial;
+    width: initial;
+    opacity: 1;
+    visibility: visible;
+    height: initial;
+  }
+  .fa-bars {
+    display: none !important;
+  }
+  .dark .hidden_dropdown {
+    background-color: transparent; /* Dark mode background color */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo_img {
+    width: 100px;
+  }
+}
